@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jews nation</title>
+    <style>
+        body{
+            background-color: blue;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            display: flex;
+        }
+        .memes{
+            background-color: green;
+            padding: 80px;
+            border-radius: 40px;
+        }
+        .labels{
+            display: flex;
+            padding: 10px;
+            flex-direction: column;
+        }
+        input{
+            padding: 10px;
+            border-color: black;
+            border-radius: 10px;
+
+        }
+        button{
+            padding: 10px;
+            border-radius: 10px;
+            position: absolute;
+            right:650px;
+            border-color: aqua;
+            border: none;
+        }
+        button:hover{
+            background-color: blueviolet;
+            cursor: pointer;
+            color: red;
+        }
+         para{
+            color: red;
+        }
+        input.error{
+            border: 2px solid red;
+        }
+        input.valid{
+            border: 4px solid green;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="memes">
+        <form action="" id="form">
+            <h1>Complete Form</h1>
+            <div class="labels">
+                <label for="name">Name</label>
+                <input type="text" name="" placeholder="" id="name" >
+                <para id="paraName"></para><br>
+                
+                <label for="phone">Phone Number</label>
+                <input type="number" name="" placeholder="" id="phone" >
+                <para id="paraNumber"></para>
+
+                <label for="email">Email</label>
+                <input type="text" name="" placeholder="" id="email" >
+                <para id="paraEmail"></para>
+
+                <label for="address">Address</label>
+                <input type="text" name="" placeholder="" id="address" >
+                <para id="paraAddress"></para>
+
+                <label for="password">Password</label>
+                <input type="password" name="" placeholder="" id="password" >
+                <para id="paraPassword"></para>
+
+                <p id="para"></p>
+
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    </div>
+</body>
+<script>
+    const form = document.getElementById('form');
+    // const para = document.getElementById('para');
+    const paraName = document.getElementById('paraName');
+    const paraPhone = document.getElementById('paraPhone');
+    const paraEmail = document.getElementById('paraEmail');
+    const paraAddress = document.getElementById('paraAddress');
+    const paraPassword = document.getElementById('paraPassword');
+
+
+    form.addEventListener("submit",(e) =>{
+        e.preventDefault();
+        // para.textContent="";
+        paraName.textContent="";
+        paraPhone.textContent="";
+        paraEmail.textContent="";
+        paraAddress.textContent="";
+        paraPassword.textContent="";
+
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const address = document.getElementById('address').value.trim();
+        const password = document.getElementById('password').value.trim();
+
+        if(!name || !phone || !email ||!address|| !password){
+            // alert("Jaza");
+    // para.textContent="all fields are required";
+       paraName.textContent="name is required";
+       paraPhone.textContent="phone is required";
+       paraEmail.textContent="email is required";
+       paraAddress.textContent="address is required";
+       paraPassword.textContent="password is required";
+    }
+    //     if(password.length < 8){
+    //         passwordInput.classList.add("error")
+    //         parapassword.textContent="password is required";
+    //      }else {
+    //     passwordInput.classList.remove("error");
+    //     passwordInput.classList.add("valid");
+    //     parapassword.textContent="";
+
+    //   }
+    //  if (!email.includes("@")){
+    //         emailInput.classList.add("error");
+    //         paraemail.textContent = "email is required";
+    //  }else{
+    //     emailInput.classList.remove("error");
+    //     emailInput.classList.add("valid");
+    //     paraemail.textContent = "";
+
+    //  }
+    //    if (!phone <7){
+    //     phoneInput.classList.add("error");
+    //     paraphone.textContent = "name is required";
+   
+    //   }else{
+    //     phoneInput.classList.remove("error");
+    //     phoneInput.classList.add("valid");
+    //     paraphone.textContent = "";
+    //   }
+    
+    //   if (!name <7){
+    //     nameInput.classList.add("error");
+    //     paraname.textContent = "name is required";
+   
+    //   }else{
+    //     namelInput.classList.remove("error");
+    //     nameInput.classList.add("valid");
+    //     paraname.textContent = "";
+    //   }
+    //  if (!address.includes("5")){
+    //     addressInput.classList.add("error");
+    //     paraaddress.textContent = "name is required";
+    //     PaymentAddress.textContent="";
+    //  }
+    })
+</script>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jews page</title>
+    <style>
+        body{
+            background-color: blue;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            display: flex;
+        }
+        .memes{
+            background-color: green;
+            padding: 80px;
+            border-radius: 40px;
+        }
+        .labels{
+            display: flex;
+            padding: 10px;
+            flex-direction: column;
+        }
+        input{
+            padding: 10px;
+            border-color: black;
+            border-radius: 10px;
+
+        }
+        button{
+            padding: 10px;
+            border-radius: 10px;
+            position: absolute;
+            right:650px;
+            border-color: aqua;
+            border: none;
+        }
+        button:hover{
+            background-color: blueviolet;
+            cursor: pointer;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="memes">
+        <form action="" id="form">
+            <h1>Complete Form</h1>
+            <div class="labels">
+                <label for="name">Name</label>
+                <input type="text" name="" placeholder="" id="name" >
+                <span style="color: red" id="name_error"></span>
+                
+
+                <label for="phone">Phone Number</label>
+                <input type="number" name="" placeholder="" id="phone" >
+                <span style="color: red" id="phone_error"></span>
+
+                <label for="email">Email</label>
+                <input type="text" name="" placeholder="" id="email" >
+                <span style="color: red" id="email_error"></span>
+
+                <label for="address">Address</label>
+                <input type="text" name="" placeholder="" id="address" >
+                <span style="color: red" id="address_error"></span>
+
+                <label for="password">Password</label>
+                <input type="password" name="" placeholder="" id="password" >
+                <span style="color: red" id="password_error"></span>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    </div>
+</body>
+<script>
+    const form = document.getElementById('form');
+    form.addEventListener("submit",(e) =>{
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const address = document.getElementById('address').value.trim();
+        const password = document.getElementById('password').value.trim();
+
+        
+      //used to display error output
+        const name_error = document.getElementById('name_error');
+        const phone_error = document.getElementById('phone_error');
+        const email_error = document.getElementById('email_error');
+        const address_error = document.getElementById('address_error');
+        const password_error = document.getElementById('password_error');
+
+      //used to display error output
+        e.preventDefault();
+        name_error.innerHTML = "name is required";
+        phone_error.innerHTML = "phone is required";
+        email_error.innerHTML = "email is required";
+        address_error.innerHTML = "address is required";
+        password_error.innerHTML = "password is required";
+
+        // alert(name);
+        // alert(phone);
+        // alert(email);
+        // alert(password);
+
+        // console.log(name);
+        // console.log(phone);
+        // console.log(email);
+        // console.log(address);
+        // console.log(password);
+
+        // const student={
+        //     name:name,
+        //     phone:phone,
+        //     email:email,
+        //     address:address,
+        //     password:password
+        // }
+        // console.log(student);
+
+
+        //if(!name || !phone || !email ||!address || !password){
+        //    alert("all fields are required");
+        //}   
+        // }else{
+        //     alert("jewz nation")
+        // }
+        // if(!name){
+        //     alert("name is required")
+        // }else if(!phone){
+        //     alert("phone is required")
+        // }else if(!email){
+        //     alert("email is required")
+        // }else if(!address){
+        //     alert("address is required")
+        // }else if(!password){
+        //     alert("password is required")
+        // };
+
+        // if(password.length < 8){
+        //     alert("password must contain atleast 8 characters ")
+        // }else{
+        //     alert("strong password")
+        // }
+    })
+</script>
+</html>

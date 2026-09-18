@@ -1,0 +1,180 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aqua;
+            justify-content: center;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+        }
+        form{
+            background-color: rgb(140, 140, 184);
+            padding: 20px;
+            width: 100%;
+            border-radius: 20px;
+        }
+        .form-group{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        button{
+            background-color: brown;
+            padding: 10px;
+            border-radius: 99px;
+            width: 100px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: yellowgreen;
+            cursor: pointer;
+        }
+
+        h1{
+            text-align: center;
+        }
+        input{
+            padding: 10px;
+            color: red;
+            outline: none;
+            margin-bottom: 5px;
+            border: 2px solid;
+            border-color: green;
+        }
+        .error-message{
+            color: red;
+            font-size: 12px;
+        }
+        .input-error{
+            border-color: red;
+        }
+        input:focus{
+            border-color: red;
+        }
+        input::placeholder{
+            color: black;
+        }
+        input:focus::placeholder{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-component">
+    <form action="" id="form">
+        <h1>Register</h1>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="" id="name" placeholder="Name" required>
+        <span class="error-message"></span>
+
+        <label for="phone">Phone Number</label>
+        <input type="number" name="" id="phone" placeholder="Phone Number" required>
+        <span class="error-message"></span>
+
+        <label for="email">Email</label>
+        <input type="email" name="" id="email" placeholder="Email" required>
+        <span class="error-message"></span>
+
+        <label for="password">Password</label>
+        <input type="password" name="" id="password" placeholder="Password" required>
+        <span class="error-message"></span>
+
+      </div>
+
+       <button type="submit">Register</button>
+    </form>
+    </div>
+</body>
+<script> 
+    const form = document.getElementById('form');
+    form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+         console.log({ name, phone, email, password });
+        //   if(!name || !phone || !email || !password){
+        //     alert("Please fill all the fields");
+        //      return;
+        //  }
+
+          if(!email || !email.includes("@")){
+            alert("Please enter a valid email address");
+            return;
+        }
+         if(!name){
+           alert("Please fill all the fields")
+         }
+         else if(!phone){
+           alert("Please fill all the fields")
+         }
+        else if(!email){
+        alert("Please fill all the fields")
+}
+        else if(!password){
+            alert("Please fill all the fields")
+          }
+            else{
+               alert("Form submitted successfully")
+           }
+         if(!password || password.length < 6){
+        alert("Password must be at least 6 characters long");
+           return;
+        }
+        if(!phone || phone.length < 10){
+            alert("Phone number must be at least 10 digits long");
+            return;
+        }
+        if(!name || name.length < 3){
+            alert("Name must be at least 3 characters long");
+            return;
+        }
+        if(!email || !email.includes("@")){
+            alert("Please enter a valid email address");
+            return;
+        }
+        if(!password || password.length < 6){
+            alert("Password must be at least 6 characters long");
+            return;
+        }
+        if(nameInput.value.trim() === ""){
+            nameInput.classList.add("error-border");
+            nameInput.nextElementSibling.textContent = "Name is required";
+        } else {
+            nameInput.classList.remove("error-border");
+            nameInput.nextElementSibling.textContent = "enter your name";
+        }
+        if(phoneInput.value.trim() === ""){
+            phoneInput.classList.add("error-border");
+            phoneInput.nextElementSibling.textContent = "Phone number is required";
+        } else {
+            phoneInput.classList.remove("error-border");
+            phoneInput.nextElementSibling.textContent = "enter your phone number";
+        }
+        if(emailInput.value.trim() === ""){
+            emailInput.classList.add("error-border");
+            emailInput.nextElementSibling.textContent = "Email is required";
+        } else {
+            emailInput.classList.remove("error-border");
+            emailInput.nextElementSibling.textContent = "enter your email";
+        }
+        if(passwordInput.value.trim() === ""){
+            passwordInput.classList.add("error-border");
+            passwordInput.nextElementSibling.textContent = "Password is required";
+        } else {
+            passwordInput.classList.remove("error-border");
+            passwordInput.nextElementSibling.textContent = "enter your password";
+        }
+    })
+</script>
+</html>
